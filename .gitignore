@@ -1,0 +1,5 @@
+storage/uploads/*
+storage/converted/*
+data/database.db
+node_modules
+vendor
