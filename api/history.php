@@ -1,4 +1,7 @@
 <?php
+
+$db = new PDO('sqlite:' . __DIR__ . '/../data/database.db');
+
 header("Content-Type: application/json");
 $file = __DIR__ . "/../data/history.json";
 

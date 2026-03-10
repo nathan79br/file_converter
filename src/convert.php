@@ -16,8 +16,8 @@ if (!isset($_POST['filename']) || !isset($_POST['format'])) {
 $inputFile = basename($_POST['filename']);
 $format    = strtolower($_POST['format']);
 
-$inputPath = __DIR__ . "/uploads/" . $inputFile;
-$outputDir = __DIR__ . "/converted/";
+$inputPath = __DIR__ . "/../storage/uploads/" . $inputFile;
+$outputDir = __DIR__ . "/../storage/converted/";
 
 if (!file_exists($inputPath)) {
     echo json_encode([
@@ -94,7 +94,7 @@ if ($group === "document") {
 if ($returnCode === 0 && file_exists($outputPath)) {
     echo json_encode([
         "success" => true,
-        "download" => "converted/" . $outputFile
+        "download" => "storage/converted/" . $outputFile
     ]);
 } else {
     echo json_encode([

@@ -21,8 +21,8 @@ if (!in_array($quality, $allowedQuality)) {
     $quality = "balanced";
 }
 
-$inputPath = __DIR__ . "/uploads/" . $inputFile;
-$outputDir = __DIR__ . "/compressed/";
+$inputPath = __DIR__ . "/../storage/uploads/" . $inputFile;
+$outputDir = __DIR__ . "/../storage/converted/";
 
 if (!file_exists($inputPath)) {
     echo json_encode([

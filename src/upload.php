@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/json");
 
-$uploadDir = __DIR__ . "/uploads/";
+$uploadDir = __DIR__ . "/../storage/uploads/";
 
 if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0777, true);
@@ -45,6 +45,6 @@ if (!move_uploaded_file($file["tmp_name"], $targetPath)) {
 echo json_encode([
     "status" => "success",
     "filename" => $filename,
-    "extension" => strtolower(pathinfo($filename, PATHINFO_EXTENSION)),
-    "size" => filesize($targetPath)
+    "extension" => $extension,
+    "size" => $size
 ]);

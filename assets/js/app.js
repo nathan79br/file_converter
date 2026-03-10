@@ -63,7 +63,7 @@ function handleFileSelect(event, mode) {
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("./upload.php", {
+    fetch("./src/upload.php", {
         method: "POST",
         body: formData
     })
@@ -176,7 +176,7 @@ function convertFile() {
     formData.append("filename", currentUploadedFile);
     formData.append("format", format);
 
-    fetch("./convert.php", {
+    fetch("./src/convert.php", {
         method: "POST",
         body: formData
     })
@@ -208,7 +208,7 @@ function compressFile() {
         return;
     }
 
-    fetch("./compress.php", {
+    fetch("./src/compress.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
